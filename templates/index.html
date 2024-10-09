@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teaching Personas for Autistic Children</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            color: #4CAF50;
+        }
+
+        .avatar-selection {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .avatar-btn {
+            background-color: #007BFF;
+            color: white;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .avatar-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .lesson-content {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            max-height: 300px;
+            overflow-y: auto; /* Make content scrollable */
+        }
+
+        #lesson-text {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .interaction {
+            text-align: center;
+        }
+
+        #nextLessonBtn {
+            background-color: #28a745;
+            color: white;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #nextLessonBtn:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        #nextLessonBtn:hover:not(:disabled) {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Choose Your Teacher Avatar</h1>
+            <p>Select one of the four avatars to start learning about the basics of computers.</p>
+        </header>
+
+        <div class="avatar-selection">
+            <button class="avatar-btn" id="avatar1">Calm and Structured Teacher</button>
+            <button class="avatar-btn" id="avatar2">Visual Learner’s Guide</button>
+            <button class="avatar-btn" id="avatar3">Interactive and Engaging Mentor</button>
+            <button class="avatar-btn" id="avatar4">Supportive and Repetitive Teacher</button>
+        </div>
+
+        <div class="lesson-content">
+            <p id="lesson-text">Select an avatar to start learning.</p>
+        </div>
+        
+        <div class="interaction">
+            <button id="nextLessonBtn" disabled>Next Lesson</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
