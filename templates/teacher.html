@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>SkulE</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}" />
+    <!-- Progress bar CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/css-circular-prog-bar.css') }}">
+    <!-- Fonts style -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome stylesheet -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <!-- Responsive style -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}" />
+</head>
+
+<style>.card:hover {
+    transform: scale(1.05); /* Slightly zooms in the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow on hover */
+}
+
+.card-link {
+    text-decoration: none; /* Removes any link underline if the card acts as a link */
+}
+
+.card-img-top:hover {
+    transform: scale(1.05); /* Slightly zooms in the image */
+}
+
+/* The Modal Background */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed at the top of the page */
+    z-index: 1; /* Sits on top of other content */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+    overflow: auto; /* Enable scrolling if needed */
+    padding-top: 100px; /* Space from the top */
+}
+
+/* The Modal Content */
+.modal-content {
+    background-color: #fff; /* White background */
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Set the modal width (adjust as needed) */
+    max-width: 600px; /* Optional: Limits the modal width */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .modal-content {
+        width: 90%; /* Make the modal content take up more of the screen on smaller devices */
+    }
+}
+
+</style>
+
+<body>
+    <div class="top_container sub_pages">
+        <!-- Header section starts -->
+        <header class="header_section">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg custom_nav-container ">
+                    <a class="navbar-brand" href="{{ url_for('index') }}">
+                        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="">
+                        <span>SkulE</span>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+                            <ul class="navbar-nav">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="{{ url_for('index') }}"> Home </a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="{{ url_for('about') }}"> About </a>
+                                </li>
+
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="{{ url_for('teacher') }}"> Learn </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href=""> Register </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- End header section -->
+
+        <!-- Teacher section -->
+        <section class="teacher_section layout_padding-bottom">
+            <div class="container">
+                <h2 class="main-heading ">
+                    Learning Paths
+                </h2>
+                <p class="text-center">
+                    Discover a learning path tailored to your <strong>unique</strong> strengths and preferences.
+                    Whether you thrive in a structured environment or not, benefit from hands-on experiences, or
+                    excel with creative approaches, our <strong>Llama powered</strong> diverse options
+                    <strong>empower</strong> you to engage deeply with the material and enhance your learning journey.
+                </p>
+                <div class="teacher_container layout_padding2">
+                    <div class="card-deck">
+                        <!-- Clickable Cards -->
+                        <div class="card" id="avatar1">
+                            <img class="card-img-top" src="{{ url_for('static', filename='images/spiderman.jpg') }}" alt="Card image cap"
+                                style="width: 250px; height: 150px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title">Spider-Visual Learner</h5>
+                            </div>
+                        </div>
+                        <div class="card" id="avatar2">
+                            <img class="card-img-top" src="{{ url_for('static', filename='images/captainAmer.jpg') }}" alt="Card image cap"
+                                style="width: 250px; height: 150px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title">Captain-Kinesthetic Learner</h5>
+                            </div>
+                        </div>
+                        <div class="card" id="avatar3">
+                            <img class="card-img-top" src="{{ url_for('static', filename='images/black pantherr.jpg') }}" alt="Card image cap"
+                                style="width: 250px; height: 150px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title">Panther-Auditory Learner - Interactive and Engaging </h5>
+                            </div>
+                        </div>
+                        <div class="card" id="avatar4">
+                            <img class="card-img-top" src="{{ url_for('static', filename='images/iron-man.jpg') }}" alt="Card image cap"
+                                style="width: 250px; height: 150px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title">Iron-Read & Write Learner - Supportive </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lesson Content and Interaction Section -->
+                <div class="lesson-content">
+                    <p id="lesson-text">Select an avatar to start learning.</p>
+                </div>
+
+                <div class="interaction">
+                    <button id="nextLessonBtn" disabled>Next Lesson</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal for Lesson Content -->
+<div id="lessonModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modal-title"></h2>
+        <p id="modal-text"></p>
+        
+    </div>
+</div>
+    <!-- Link your JS files -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

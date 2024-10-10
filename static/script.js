@@ -1,5 +1,3 @@
-// script.js
-
 // This will hold the selected persona
 let selectedPersona = "";
 
@@ -9,8 +7,15 @@ function fetchLesson(persona) {
     fetch(`/lesson/${persona}`)
         .then(response => response.json())
         .then(data => {
-            // Set the lesson text dynamically
-            document.getElementById("lesson-text").innerText = data.lesson;
+            // Set the modal content dynamically with the fetched lesson data
+            document.getElementById("modal-title").innerText = `Lesson for ${persona}`;
+            document.getElementById("modal-text").innerText = data.lesson; // Assuming data.lesson contains the text for the lesson
+
+            // Display the modal
+            var modal = document.getElementById("lessonModal");
+            modal.style.display = "block";
+
+            // Enable the next lesson button
             document.getElementById("nextLessonBtn").disabled = false;
         })
         .catch(error => console.error("Error fetching lesson:", error));
@@ -37,8 +42,22 @@ document.getElementById("avatar4").addEventListener("click", function() {
     fetchLesson(selectedPersona);
 });
 
-// Event listener for next lesson button
+// Close the modal when clicking the "x" button
+document.getElementsByClassName("close")[0].onclick = function() {
+    var modal = document.getElementById("lessonModal");
+    modal.style.display = "none";
+}
+
+// Close the modal when clicking outside of the modal content
+window.onclick = function(event) {
+    var modal = document.getElementById("lessonModal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+// Event listener for the "Next Lesson" button
 document.getElementById("nextLessonBtn").addEventListener("click", function() {
-    // Here you can either advance to the next part of the lesson or interact further with the avatar
     alert("Next lesson coming soon!");
+    // You can implement functionality for fetching the next lesson here.
 });

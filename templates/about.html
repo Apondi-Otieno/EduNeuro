@@ -14,37 +14,28 @@
 
   <title>SkulE</title>
 
-
-
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}" />
   <!-- progress barstle -->
-  <link rel="stylesheet" href="css/css-circular-prog-bar.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/css-circular-prog-bar.css') }}">
   <!-- fonts style -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
-  <!-- font wesome stylesheet -->
+  <!-- font awesome stylesheet -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
-
-
-
-
-  <link rel="stylesheet" href="css/css-circular-prog-bar.css">
-
-
+  <link href="{{ url_for('static', filename='css/responsive.css') }}" rel="stylesheet" />
 </head>
 
 <body>
   <div class="top_container sub_pages">
-    <!-- header section strats -->
+    <!-- header section starts -->
     <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="index.html">
-            <img src="images/logo.png" alt="">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="">
             <span>
               SkulE
             </span>
@@ -58,34 +49,28 @@
             <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
               <ul class="navbar-nav  ">
                 <li class="nav-item active">
-                  <a class="nav-link" href="index.html"> Home </a>
+                  <a class="nav-link" href="{{ url_for('index') }}"> Home </a>
                 </li>
-                <li class="nav-item ">
-                  <a class="nav-link" href="about.html"> About <span class="sr-only">(current)</span></a>
-                </li>
-
-                <li class="nav-item ">
-                  <a class="nav-link" href="teacher.html"> Learn </a>
-                </li>
-
                 <li class="nav-item">
-                  <a class="nav-link" href="register.html"> Register </a>
+                  <a class="nav-link" href="{{ url_for('about') }}"> About <span class="sr-only">(current)</span></a>
                 </li>
-
-                <!-- <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact Us</a>
-                </li> -->
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ url_for('teacher') }}"> Learn </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ url_for('register') }}"> Register </a>
+                </li>
+                
 
               </ul>
               <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
                 <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
               </form>
             </div>
-            </div>
+          </div>
         </nav>
       </div>
     </header>
-
   </div>
   <!-- end header section -->
 
@@ -96,44 +81,32 @@
         About SkulE
       </h2>
       <p class="text-center">
-        We specialize in <strong>personalized education</strong> that respects and adapts to diverse learning styles, <strong>with a focus on neurodivergent students.</strong>  Our goal is to create an inclusive environment where every learner can thrive and achieve their fullest potential.
+        We specialize in <strong>personalized education</strong> that respects and adapts to diverse learning styles, <strong>with a focus on neurodivergent students.</strong> Our goal is to create an inclusive environment where every learner can thrive and achieve their fullest potential.
       </p>
       <div class="about_img-box ">
-        <img src="images/kids.jpg" alt="" class="img-fluid w-100">
+        <img src="{{ url_for('static', filename='images/kids.jpg') }}" alt="" class="img-fluid w-100">
       </div>
       <div class="d-flex justify-content-center mt-5">
-        <a href="teacher.html" class="call_to-btn  ">
-
+        <a href="teacher.html" class="call_to-btn">
           <span>
             Read More
           </span>
-          <img src="images/right-arrow.png" alt="">
+          <img src="{{ url_for('static', filename='images/right-arrow.png') }}" alt="">
         </a>
       </div>
     </div>
   </section>
 
-
-  <!-- about section -->
-
-
-
-
-
   <!-- footer section -->
   <section class="container-fluid footer_section">
     <p>
-      Copyright &copy; 2024 
-   
+      Copyright &copy; 2024
     </p>
   </section>
   <!-- footer section -->
 
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
-  <!-- progreesbar script -->
-
-
+  <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
 </body>
 
 </html>
